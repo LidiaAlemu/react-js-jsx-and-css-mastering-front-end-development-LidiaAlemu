@@ -1,9 +1,7 @@
 import { useState } from 'react';
-// import './App.css';
+import TaskManager from './components/TaskManager';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="app">
       <header className="header">
@@ -15,34 +13,29 @@ function App() {
       </header>
 
       <main className="main-content">
+        {/* Task Manager Component */}
         <div className="card">
-          <div style={{ textAlign: 'center' }}>
-            <p style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>
-              Edit <code style={{ fontFamily: 'monospace', backgroundColor: '#e5e7eb', padding: '0.25rem', borderRadius: '0.25rem' }}>src/App.jsx</code> and save to test HMR
-            </p>
-            
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', justifyContent: 'center', margin: '1rem 0' }}>
-              <button
-                onClick={() => setCount(count - 1)}
-                style={{ padding: '0.5rem 1rem', backgroundColor: '#ef4444', color: 'white', border: 'none', borderRadius: '0.25rem', cursor: 'pointer' }}
-              >
-                -
-              </button>
-              <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{count}</span>
-              <button
-                onClick={() => setCount(count + 1)}
-                style={{ padding: '0.5rem 1rem', backgroundColor: '#10b981', color: 'white', border: 'none', borderRadius: '0.25rem', cursor: 'pointer' }}
-              >
-                +
-              </button>
-            </div>
-
-            <p style={{ color: '#6b7280', marginTop: '1rem' }}>
-              Basic React app is working! We'll add components next.
-            </p>
-          </div>
+          <TaskManager />
+        </div>
+        
+        {/* API Section - Coming Next */}
+        <div className="card">
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+            API Data
+          </h2>
+          <p style={{ color: '#6b7280' }}>
+            API integration will be implemented in the next step
+          </p>
         </div>
       </main>
+
+      <footer style={{ backgroundColor: 'white', padding: '1.5rem 0', marginTop: 'auto', boxShadow: '0 -1px 3px rgba(0,0,0,0.1)' }}>
+        <div className="main-content">
+          <p style={{ textAlign: 'center', color: '#6b7280', margin: 0 }}>
+            © {new Date().getFullYear()} PLP Task Manager. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
