@@ -19,10 +19,19 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     
+    // Apply theme to document
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.style.setProperty('--bg-primary', '#1f2937');
+      document.documentElement.style.setProperty('--bg-secondary', '#374151');
+      document.documentElement.style.setProperty('--text-primary', '#f9fafb');
+      document.documentElement.style.setProperty('--text-secondary', '#e5e7eb');
+      document.documentElement.style.setProperty('--border-color', '#4b5563');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.style.setProperty('--bg-primary', '#f3f4f6');
+      document.documentElement.style.setProperty('--bg-secondary', '#ffffff');
+      document.documentElement.style.setProperty('--text-primary', '#111827');
+      document.documentElement.style.setProperty('--text-secondary', '#6b7280');
+      document.documentElement.style.setProperty('--border-color', '#d1d5db');
     }
   }, [isDarkMode]);
 

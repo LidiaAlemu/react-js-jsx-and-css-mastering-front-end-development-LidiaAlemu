@@ -11,11 +11,23 @@ const Card = ({
 }) => {
   return (
     <div 
-      className={`bg-white rounded-lg shadow p-6 ${className}`}
+      style={{
+        backgroundColor: 'var(--bg-secondary)',
+        borderRadius: '0.5rem',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+        padding: '1.5rem',
+        border: '1px solid var(--border-color)',
+        transition: 'all 0.3s ease'
+      }}
       {...rest}
     >
       {title && (
-        <h3 className="text-xl font-semibold mb-4 text-gray-800">
+        <h3 style={{ 
+          fontSize: '1.25rem', 
+          fontWeight: '600', 
+          marginBottom: '1rem',
+          color: 'var(--text-primary)'
+        }}>
           {title}
         </h3>
       )}

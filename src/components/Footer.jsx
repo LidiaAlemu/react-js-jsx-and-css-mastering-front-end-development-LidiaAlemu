@@ -5,42 +5,38 @@ import React from 'react';
  */
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white mt-auto">
-      <div className="max-w-7xl mx-auto py-8 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer style={{
+      backgroundColor: 'var(--bg-secondary)',
+      color: 'var(--text-primary)',
+      marginTop: 'auto',
+      borderTop: '1px solid var(--border-color)',
+      transition: 'all 0.3s ease'
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem' }}>
+        <div style={{ 
+          display: 'grid',
+          gridTemplateColumns: 'repeat(1, 1fr)',
+          gap: '2rem',
+          marginBottom: '2rem'
+        }}>
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">PLP Task Manager</h3>
-            <p className="text-gray-300">
-              A modern task management application built with React and Tailwind CSS.
+            <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem' }}>
+              PLP Task Manager
+            </h3>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              A modern task management application built with React.
             </p>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Tasks</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>Email: info@plptaskmanager.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Address: 123 React Street, JSX City</li>
-            </ul>
           </div>
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-gray-300">
+        <div style={{ 
+          borderTop: '1px solid var(--border-color)',
+          paddingTop: '1.5rem',
+          textAlign: 'center'
+        }}>
+          <p style={{ color: 'var(--text-secondary)', margin: 0 }}>
             © {new Date().getFullYear()} PLP Task Manager. All rights reserved.
           </p>
         </div>
